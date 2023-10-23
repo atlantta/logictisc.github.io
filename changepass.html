@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Зміна паролю</title>
+
+ <style>
+    body {
+    font-family: Arial, San-Serif; 
+    font-size: 100%;
+    }
+    
+    .tabcontent {
+      width: 300px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+     .header-wrapper {
+            padding: 1px 0;
+            background-color: black; 
+        }
+
+    .tabcontent {
+      margin-bottom: 20px;
+    }
+
+    .tabcontent label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .tabcontent input {
+      width: 100%;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+
+    .tabcontent input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+
+
+</head>
+</script>
+
+    <div id="changePasswordTab" class="tabcontent">
+
+         <header class="header">
+            <div class="container">
+                 <div class="header-wrapper">
+                 <img src="img/10.png" alt="Logo" width="200" height="60" class="logo">
+            </div>
+        </header>
+
+        <h3>Зміна паролю</h3>
+        <form id="passwordChangeForm">
+            <label for="currentPassword">Поточний пароль:</label><br>
+            <input type="password" id="currentPassword" name="currentPassword" required><br><br>
+            <label for="newPassword">Новий пароль:</label><br>
+            <input type="password" id="newPassword" name="newPassword" required><br><br>
+            <input type="submit" value="Змінити пароль">
+            <input type="submit" onclick="openWindow()"></input>
+                        <script>
+                            function openWindow() {
+                             window.open("index.html", "_blank");
+                         }
+                    </script>
+        </form>
+    </div>
+    
+
+    <script>
+        // Відкриття вкладки при завантаженні сторінки
+        document.getElementsByClassName("tablinks")[0].click();
+
+        // Відкриття вкладки
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Додавання обробника подій для форми зміни паролю
+        document.getElementById("passwordChangeForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            // Додайте код для зміни паролю тут
+            alert("Ваш пароль було успішно змінено!");
+        });
+  
+
+ </script>
+
+
+    <style>
+        /* Стилі CSS для області підпису */
+        #signatureArea {
+            border: 1px solid #000;
+            width: 300px;
+            height: 150px;
+            margin: 20px;
+            padding: 10px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="signatureArea" contenteditable="true">
+        Введіть ваш цифровий підпис тут...
+    </div>
+
+    <button  onclick="saveSignature()">Зберегти підпис</button>
+
+    <script>
+        // Функція для збереження цифрового підпису
+        function saveSignature() {
+            var signature = document.getElementById('signatureArea').innerText;
+            // Додайте тут код для збереження підпису
+            alert("Цифровий підпис було успішно збережено: " + signature);
+        }
+    </script>

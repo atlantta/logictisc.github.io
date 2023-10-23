@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цифровий підпис</title>
+    <style>
+   body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: white;
+        }
+
+        .container {
+
+            width: 300px;
+            padding: 20px;
+            background-color: darkseagreen; 
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .header-wrapper {
+            padding: 1px 0;
+            background-color: black; 
+        }
+
+        input {
+            width: 100%;
+            padding: 7px;
+            margin: 10px 0;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <header class="header">
+            <div class="container">
+                 <div class="header-wrapper">
+                 <img src="img/10.png" alt="Logo" width="200" height="60" class="logo">
+            </div>
+        </header>
+
+
+        <h2>Цифровий підпис</h2>
+        <form id="authForm" onsubmit="validateForm(event)">
+        
+            
+            <input type="file" id="signature" name="signature" required>
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Увійти</button>
+            
+
+            <button onclick="openNewWindow()">Інший варіант</button>
+            <button onclick="openNewWindow1()">На головну</button>
+
+</form>
+<script>
+    function openNewWindow() {
+        window.open("card.html", "_blank");
+    }
+</script>
+<script>
+    function openNewWindow1() {
+        window.open("index.html", "_blank");
+    }
+</script>
+
+
+    </div>
+    <script>
+        function validateForm(e) {
+            e.preventDefault();
+            let username = document.getElementById('username').value;
+            let signatureFile = document.getElementById('signature').files[0];
+
+            // Тут потрібно додати логіку завантаження та перевірки підписаного файлу.
+            // Це може вимагати використання спеціалізованих бібліотек, таких як PKI.js або інших.
+
+            if (username === 'yourUsername' && signatureFile) {
+                alert('Авторизація пройшла успішно!');
+            } else {
+                alert('Невірний логін або підпис. Спробуйте ще раз.');
+            }
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>OneTimePassword</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: white;
+        }
+
+        .container {
+
+            width: 300px;
+            padding: 20px;
+            background-color: darkseagreen; 
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+          .header-wrapper {
+            padding: 1px 0;
+            background-color: black; 
+        }
+
+        input[type="text"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid white;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+  <header class="header">
+            <div class="container">
+                 <div class="header-wrapper">
+                 <img src="img/10.png" alt="Logo" width="200" height="60" class="logo">
+            </div>
+        </header>
+
+        <h2>Your password</h2>
+        <form action="2" method="post">
+            <input type="text" id="otp" name="otp" placeholder="Одноразовий код доступу/OTP" required><br>
+            <input type="submit" value="Перевірка далі">
+            <input type="submit" onclick="openWindow()"></input>
+                        <script>
+                            function openWindow() {
+                             window.open("ecp.html", "_blank");
+                         }
+                    </script>
+
+        </form>
+    </div>
+
+</body>
+
+</html>
