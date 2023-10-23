@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Авторизація</title>
+
+
+ <style>
+    body {
+    font-family: Arial, San-Serif; 
+    font-size: 100%;
+    }
+    
+    .tabcontent {
+      width: 300px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .tabcontent {
+      margin-bottom: 20px;
+    }
+
+    .tabcontent label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .tabcontent input {
+      width: 100%;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+
+    .tabcontent input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+    button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+  </style>
+
+</head>
+
+<body>
+
+    <!-- Розміщення елементу, де буде відображатися нагадування -->
+    <p id="passwordChangeReminder"></p>
+    
+    <script>
+        // Отримати поточну дату
+        var currentDate = new Date();
+
+        // Дата останньої зміни пароля (припустимо, що це значення отримано з бази даних)
+        var lastPasswordChangeDate = new Date("2023-01-01"); // Поміняйте це значення на фактичну дату останньої зміни пароля
+
+        // Додаємо 60 днів до дати останньої зміни пароля
+        lastPasswordChangeDate.setDate(lastPasswordChangeDate.getDate() + 60);
+
+        // Перевірка, чи пройшло 60 днів
+        if (currentDate.getTime() > lastPasswordChangeDate.getTime()) {
+            var reminderElement = document.getElementById('passwordChangeReminder');
+
+            reminderElement.textContent = 'Пройшло більше 60 днів з моменту останньої зміни пароля. Будь ласка, змініть пароль.';
+            // Виклик функції для відкриття вікна зміни пароля
+            openChangePasswordModal();
+    }   else {
+            // Перенаправлення на головну сторінку або сторінку авторизації
+
+            window.location.replace("otp.html");
+            // window.location.href = "main.html"; // Або так
+        }
+function openChangePasswordModal() {
+                 window.open("changepass.html", "_blank", "width=400, height=400");
+        
+        } 
+ </script>
+    
+</body>
+
+</body>
+
+</html>
