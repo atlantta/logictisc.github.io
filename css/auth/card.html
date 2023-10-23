@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перевірка профілю</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: white;
+        }
+
+        p {
+          font-size: 13px;          
+          line-height: 1.3em;  
+           background-color: white;   
+        }
+
+        .container {
+
+            width: 300px;
+            padding: 20px;
+            background-color: darkseagreen; 
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .header-wrapper {
+            padding: 1px 0;
+            background-color: black; 
+        }
+
+        .note {
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        input[type="text"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid white;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+
+
+         <header class="header">
+            <div class="container">
+                 <div class="header-wrapper">
+                 <img src="img/10.png" alt="Logo" width="200" height="60" class="logo">
+            </div>
+        </header>
+
+        <h2>Перевірка оплатою з розрахункового рахунку</h2>
+        <form id="authForm">
+
+            <div class="container">
+
+
+            <label for="accountNumber">Номер розрахункового рахунку:</label>
+            <input type="text" id="accountNumber" name="accountNumber" required>
+            <button type="submit" onclick="authorize()">Увійти</button>
+
+<button onclick="openNewWindow()">Повернутися</button>
+</form>
+<script>
+    function openNewWindow() {
+        window.open("ecp.html", "_blank");
+    }
+</script>
+
+             <header class="header">
+           
+                 <div class="header-wrapper1">
+                 <p class="note">Важливо! Оплачувати потрібно з Вашого підприємства. Перевірка не буде зараховано, якщо з особистої картки. Сплачена сума буде зараховано на баланс та її можна буде використовувати для підключення послуг </p>
+            </div>
+        </header>
+
+
+
+
+       
+    </div>
+    <script>
+        function authorize() {
+            let username = document.getElementById('username').value;
+            let accountNumber = document.getElementById('accountNumber').value;
+
+            // Тут виконується перевірка даних оплати з розрахункового рахунку. 
+            // Додайте власну логіку перевірки.
+
+            if (username === 'yourUsername' && accountNumber === 'yourAccountNumber') {
+                alert('Авторизація пройшла успішно!');
+            } else {
+                alert('Невірний логін або номер рахунку. Спробуйте ще раз.');
+            }
+        }
+    </script>
+</body>
+</html>
